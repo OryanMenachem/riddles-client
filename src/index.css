@@ -1,35 +1,91 @@
 :root {
-  --primary-color: #29b6f6;
+  --primary-color: #6a0dad;
   --text-color: white;
   /* --background-color: #ffffff; */
-  --font-family: Georgia, serif;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 html,
 body,
-#root {
+#root,
+.page {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: var(--primary-color);
 }
 
+/* .page {
+  display: grid;
+} */
+
+/*  */
+
+.home-page {
+  display: grid;
+}
+
+/* Main header with logo & navbar */
+.main-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.logo {
+  grid-column: 1 / 2;
+  color: white;
+  font-size: 1em;
+}
+
+.main-nav {
+  grid-column: 2 / 4;
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.4rem;
+}
+/*  */
+
 .title {
+  font-family: var(--font-family);
+  font-size: 5rem;
+  font-weight: bold;
 }
 
 .riddlesGame-title {
+  color: var(--text-color);
 }
 
 .copyright {
+  color: var(--text-color);
 }
 
 .game-description {
+  color: var(--text-color);
+  letter-spacing: 1px;
 }
 
 .btn {
-  background-color: var(--primary-color);
+  background-color: rgba(107, 105, 190, 0.5);
   color: var(--text-color);
-  opacity: 0.5;
+  transition: all 0.2s;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-family);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  transform: translateY(-0.2rem) scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .colorMode-btn {
@@ -41,13 +97,19 @@ body,
 }
 
 .container-loginButtons {
+  width: 30rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  justify-content: space-around;
 }
 
-.play-btn {
-}
-
-.login-btn {
-}
-
+.play-btn,
+.login-btn,
 .signUp-btn {
+  width: 8em;
+  height: 3.5em;
+  border-radius: 0.5em;
+  border: 1px solid var(--primary-color);
 }
