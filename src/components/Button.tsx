@@ -7,10 +7,16 @@ export function LoginButtons() {
       <button className="btn play-btn" onClick={() => navigate("/play")}>
         Play
       </button>
-      <button className="btn login-btn" onClick={() => navigate("/login")}>
+      <button
+        className="btn login-btn"
+        onClick={() => navigate("/auth", { state: { mode: "login" } })}
+      >
         Login
       </button>
-      <button className="btn signUp-btn" onClick={() => navigate("/signUp")}>
+      <button
+        className="btn signUp-btn"
+        onClick={() => navigate("/auth", { state: { mode: "signUp" } })}
+      >
         SignUp
       </button>
     </div>

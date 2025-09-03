@@ -1,5 +1,6 @@
 :root {
   --primary-color: #6a0dad;
+  --secondary-color: white;
   --text-color: white;
   /* --background-color: #ffffff; */
   font-family: "Comic Sans MS", cursive, sans-serif;
@@ -30,50 +31,73 @@ body,
 .main-header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  width: auto;
+  height: 5rem;
+  margin: 0;
+  padding: 1rem;
 }
 
 .logo {
   grid-column: 1 / 2;
-  color: white;
-  font-size: 1em;
+  color: var(--secondary-color);
+  font-size: 2em;
+  margin: auto;
+  padding: 0;
+  max-height: 4rem;
+  justify-self: center;
 }
 
 .main-nav {
   grid-column: 2 / 4;
   display: flex;
   flex-direction: row;
-  gap: 5rem;
+  gap: 5em;
+  max-height: 3rem;
+  justify-self: center;
+  margin: auto;
 }
 
 a {
   text-decoration: none;
-  color: white;
-  font-size: 1.4rem;
+  color: var(--secondary-color);
+  font-size: 1.4em;
+  margin: 0;
+  padding: 0;
+  max-height: 2em;
 }
 /*  */
 
 .title {
   font-family: var(--font-family);
+  color: var(--secondary-color);
   font-size: 5rem;
   font-weight: bold;
+  margin-top: 0;
+  justify-self: center;
 }
 
 .riddlesGame-title {
-  color: var(--text-color);
+  margin: 0;
+  padding: 0;
 }
 
 .copyright {
-  color: var(--text-color);
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+  justify-self: center;
 }
 
 .game-description {
-  color: var(--text-color);
+  color: var(--secondary-color);
   letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 5rem;
+  justify-self: center;
 }
 
 .btn {
-  background-color: rgba(107, 105, 190, 0.5);
-  color: var(--text-color);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   transition: all 0.2s;
   font-size: 1em;
   cursor: pointer;
@@ -112,4 +136,77 @@ a {
   height: 3.5em;
   border-radius: 0.5em;
   border: 1px solid var(--primary-color);
+}
+
+/* form */
+.container-form {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  border: 2px solid white;
+  border-radius: 1rem;
+  height: 25rem;
+  width: 23rem;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  justify-self: center;
+}
+
+.submit-btn {
+  width: 6em;
+  height: 3em;
+  border-radius: 0.5em;
+  border: 2px solid var(--primary-color);
+  justify-self: center;
+  align-self: center;
+}
+
+.input {
+  height: 2em;
+  width: 15em;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.8em;
+  padding-left: 0.5em;
+  justify-self: center;
+  align-self: center;
+  font-family: var(--font-family);
+  font-size: 1em;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.label {
+  color: var(--primary-color);
+  font-family: var(--font-family);
+  font-weight: bold;
+  font-size: 1.4em;
+  justify-self: center;
+  align-self: self-end;
+}
+
+.username-label {
+  grid-row: 1 / 2;
+}
+.username-input {
+  grid-row: 2 / 3;
+}
+
+.password-label {
+  grid-row: 3 / 4;
+}
+.password-input {
+  grid-row: 4 / 5;
+}
+
+/*  */
+
+/* Login & SignUp pages */
+
+.login-page,
+.signUp-page {
+  display: grid;
+}
+
+.login-titl,
+.signUp-title {
+  font-size: 3rem;
 }

@@ -10,5 +10,5 @@ export default function MainHeader() {
 }
 
 function Logo() {
-  return <div className="logo">RiddlesGame</div>;
+  return <div className="logo">Riddles</div>;
 }
