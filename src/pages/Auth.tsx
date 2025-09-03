@@ -1,4 +1,4 @@
-import { AuthFrom } from "../components/Components";
+import { AuthForm } from "../components/Auth";
 import { useLocation } from "react-router-dom";
 import Header from "../components/Header";
 
@@ -9,7 +9,7 @@ export default function Auth() {
     <div className={`page ${mode}-page`}>
       <Header />
       <h1 className={`title ${mode}-title`}>{mode}</h1>
-      <AuthFrom mode={mode} />
+      <AuthForm mode={mode} />
     </div>
   );
 }
