@@ -139,7 +139,7 @@ a {
 }
 
 /* form */
-.container-form {
+.auth-container {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   border: 2px solid white;
@@ -209,4 +209,20 @@ a {
 .login-titl,
 .signUp-title {
   font-size: 3rem;
+}
+
+.menu {
+  background-color: white;
+  width: 25em;
+  height: 30em;
+  border-radius: 1em;
+  justify-self: center;
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
