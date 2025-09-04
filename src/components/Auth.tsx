@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { sendHttpReq, parseJWT } from "../utilities/helpers";
+import { saveToLocalStorage } from "../utilities/storage";
 
 export function AuthForm({ mode }: { mode: string }) {
   const [password, setPassword] = useState("");
@@ -31,7 +33,7 @@ export function AuthForm({ mode }: { mode: string }) {
       <button
         className="btn submit-btn"
         onClick={() => {
-          sendHttpReq(`http://localhost:3000/auth/${mode}`, "POST", {
+          authManager(mode, {
             username,
             password,
           });
@@ -43,42 +45,17 @@ export function AuthForm({ mode }: { mode: string }) {
   );
 }
 
-export async function sendHttpReq(url: string, method: string, body = {}) {
-  let res;
-  const options = {
-    method,
-    headers: { "Content-Type": "application/json" },
-    body: "",
-  };
-
-  if (method.toUpperCase() !== "GET" && body !== null) {
-    options.body = JSON.stringify(body);
-  }
-
-  // await new Promise((res) => setTimeout(res, 1000));
-
-  try {
-    res = await fetch(url, options);
-
-    if (res.ok) {
-      res = await res.json();
-      const token = res.token;
-      localStorage.setItem("token", JSON.stringify(token));
-      parseJWT();
-    }
-  } catch (error) {
-    console.log(error);
-
-    return error;
-  }
+async function getToken(mode: string, credentials: object) {
+  const endPoint = `auth/${mode}`;
+  const method = "POST";
+  const res = await sendHttpReq(endPoint, method, credentials);
+  const token = res.token;
+  return token;
 }
 
-function parseJWT() {
-  let token = localStorage.getItem("token");
-  if (token) {
-    const payload = token.split(".")[1];
-    const decoded = atob(payload.replace(/-/g, "+").replace(/_/g, "/"));
-    return JSON.parse(decoded);
-  }
-  return null;
+async function authManager(mode: string, credentials: object) {
+  const token = await getToken(mode, credentials);
+  saveToLocalStorage("token", token);
+  const decodedToken = parseJWT(token)
+  
 }
