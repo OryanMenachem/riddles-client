@@ -7,8 +7,6 @@ export function parseJWT(token: string) {
   return null;
 }
 
-
-
 export async function sendHttpReq(endPoint: string, method: string, body = {}) {
   let res;
   const url = `http://localhost:3000/${endPoint}`;
@@ -28,8 +26,7 @@ export async function sendHttpReq(endPoint: string, method: string, body = {}) {
     res = await fetch(url, options);
 
     if (res.ok) {
-      res = await res.json();
-      return res;
+      return await res.json();
     }
   } catch (error) {
     return error;
