@@ -1,10 +1,10 @@
-import Navbar from "./Navbar";
+import MainNavbar from "./Navbar";
 
 export default function MainHeader() {
   return (
     <header className="header main-header">
       <Logo />
-      <Navbar />
+      <MainNavbar />
     </header>
   );
 }

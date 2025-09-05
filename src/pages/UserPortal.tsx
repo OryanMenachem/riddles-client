@@ -6,7 +6,7 @@ export default function UserPortal() {
       <MainHeader />
       <h1 className="title userPortal-title">User Portal</h1>
       <div className="menu user-menu">
-        <button className="btn play-btn">Play </button>
+        <button className="btn play-game--btn">Play </button>
         <button className="btn view-best-time-btn">View best time</button>
         <button className="btn add-riddle-btn">Add a riddle</button>
         <button className="btn edit-riddle-btn">Edit a riddle</button>

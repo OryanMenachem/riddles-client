@@ -1,13 +1,21 @@
 import MainHeader from "../components/Header";
-import { sendHttpReq } from "../utilities/helpers";
+
+import { useNavigate } from "react-router-dom";
 
 export default function AdminPortal() {
+  const navigate = useNavigate();
+
   return (
     <div className="page adminPortal-page">
       <MainHeader />
       <h1 className="title adminPortal-title">Admin Portal</h1>
       <div className="menu admin-menu">
-        <button className="btn view-all-riddles-btn">View all riddles</button>
+        <button
+          className="btn view-all-riddles-btn"
+          onClick={() => navigate("/view-riddles")}
+        >
+          View all riddles
+        </button>
         <button className="btn add-riddle-btn">Add a riddle</button>
         <button className="btn edit-riddle-btn">Edit a riddle</button>
         <button className="btn delete-riddle-btn">Delete a riddle</button>
@@ -15,11 +23,3 @@ export default function AdminPortal() {
     </div>
   );
 }
-
-function getAllRiddles() {
-  const endPoint = `riddles`;
-  const res = sendHttpReq(endPoint, "GET");
-  return res;
-}
-
-function Riddle(riddel: object) {}

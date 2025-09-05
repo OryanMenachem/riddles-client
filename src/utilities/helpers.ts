@@ -7,13 +7,17 @@ export function parseJWT(token: string) {
   return null;
 }
 
-export async function sendHttpReq(endPoint: string, method: string, body = {}) {
+export async function sendHttpReq(
+  endPoint: string,
+  method: string,
+  body?: object
+) {
   let res;
+
   const url = `http://localhost:3000/${endPoint}`;
-  const options = {
+  const options: any = {
     method,
     headers: { "Content-Type": "application/json" },
-    body: "",
   };
 
   if (method.toUpperCase() !== "GET" && body !== null) {
