@@ -12,8 +12,7 @@ export default function MainNavbar() {
   );
 }
 
-
-export  function AdminPortalNavbar() {
+export function AdminPortalNavbar() {
   return (
     <nav className="nav  admin-portal--nav">
       <Link to={"/admin-portal"}>Admin Portal</Link>
