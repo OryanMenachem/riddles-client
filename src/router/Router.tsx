@@ -10,6 +10,8 @@ import {
   Settings,
   About,
 } from "../pages";
+import ViewRiddles from "../pages/admin/ViewRiddles";
+
 
 export default function Router() {
   return (
@@ -25,6 +27,8 @@ export default function Router() {
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/about" element={<About />} />
+          <Route path="/view-riddles" element={<ViewRiddles/>} />
+
         </Routes>
       </BrowserRouter>
     </>
