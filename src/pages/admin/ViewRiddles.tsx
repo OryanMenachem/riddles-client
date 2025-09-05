@@ -14,7 +14,7 @@ export default function ViewRiddles() {
 
     fetchRiddles();
   }, []);
-  
+
   return (
     <div className="riddles-container">
       <AdminPortalNavbar />

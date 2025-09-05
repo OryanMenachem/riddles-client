@@ -3,8 +3,6 @@ import { sendHttpReq, parseJWT } from "../utilities/helpers";
 import { saveToLocalStorage } from "../utilities/storage";
 import { useNavigate } from "react-router-dom";
 
-
-
 export function AuthForm({ mode }: { mode: string }) {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
